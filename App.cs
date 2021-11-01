@@ -176,6 +176,10 @@ namespace GraphicEditor
             resizeShapeVisitor.IsShapeResized = false;
             startMoveShapeVisitor.IsMovedShape = false;
         }
+        public void DeleteSelectedShape()
+        {
+
+        }
     }
     
 }

@@ -93,9 +93,30 @@ namespace GraphicEditor
                 app.SaveAsGEF(saveFileDialog1.FileName);
             }
         }
-        private void openFileWidget_Click(object sender, EventArgs e)
+        private void appErrors_Click(object sender, EventArgs e)
         {
-
+            string text = "Известные ошибки:\n";
+            text += "1. Неправильная формула для нахождении точки треугольника\n";
+            text += "2. Неправильная формула для отрисовки круга\n";
+            text += "3. Нет возможности удалять фигуры\n";
+            MessageBox.Show(text);
         }
+        private void appInfo_Click(object sender, EventArgs e)
+        {
+            string text = "Graphic Editor:\n";
+            text += "v 0.0.1\n";
+            text += "Разработчик: Николай Слезенко\n";
+            text += "E-mail: slezenkonikolay@mail.ru\n";
+            MessageBox.Show(text);
+        }
+        private void appFeature_Click(object sender, EventArgs e)
+        {
+            string text = "Планы на следующее обновление:\n";
+            text += "1. Исправление известных ошибок\n";
+            text += "2. Добавление возможности открывать файлы формата GEF\n";
+            text += "3. Добавление геометрических фигур(Ломанная и Произвоьная фигуры) \n";
+            MessageBox.Show(text);
+        }
+
     }
 }

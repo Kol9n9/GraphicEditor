@@ -16,7 +16,7 @@ namespace GraphicEditor.Visitors
         public ShapeButtonVisitor(FlowLayoutPanel shapesContainer)
         {
             this.shapesContainer = shapesContainer;
-            currentSelectedShape = null;
+            currentSelectedShape = typeof(Line);
         }
         public void Visit(Line line)
         {

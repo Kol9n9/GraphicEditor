@@ -35,6 +35,10 @@ namespace GraphicEditor
             this.saveAsJPG = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsPNG = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsGEF = new System.Windows.Forms.ToolStripMenuItem();
+            this.toolStripMenuItem2 = new System.Windows.Forms.ToolStripMenuItem();
+            this.appErrors = new System.Windows.Forms.ToolStripMenuItem();
+            this.appFeature = new System.Windows.Forms.ToolStripMenuItem();
+            this.appInfo = new System.Windows.Forms.ToolStripMenuItem();
             this.pictureBox1 = new System.Windows.Forms.PictureBox();
             this.tableLayoutPanel1 = new System.Windows.Forms.TableLayoutPanel();
             this.shapesContainer = new System.Windows.Forms.FlowLayoutPanel();
@@ -53,7 +57,8 @@ namespace GraphicEditor
             // menuStrip1
             // 
             this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.toolStripMenuItem1});
+            this.toolStripMenuItem1,
+            this.toolStripMenuItem2});
             this.menuStrip1.Location = new System.Drawing.Point(0, 0);
             this.menuStrip1.Name = "menuStrip1";
             this.menuStrip1.Size = new System.Drawing.Size(800, 24);
@@ -67,7 +72,6 @@ namespace GraphicEditor
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
             this.toolStripMenuItem1.Text = "Файл";
-
             // 
             // saveFileAs
             // 
@@ -99,6 +103,37 @@ namespace GraphicEditor
             this.saveAsGEF.Size = new System.Drawing.Size(98, 22);
             this.saveAsGEF.Text = "GEF";
             this.saveAsGEF.Click += new System.EventHandler(this.saveAsGEF_Click);
+            // 
+            // toolStripMenuItem2
+            // 
+            this.toolStripMenuItem2.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.appErrors,
+            this.appFeature,
+            this.appInfo});
+            this.toolStripMenuItem2.Name = "toolStripMenuItem2";
+            this.toolStripMenuItem2.Size = new System.Drawing.Size(68, 20);
+            this.toolStripMenuItem2.Text = "Помощь";
+            // 
+            // appErrors
+            // 
+            this.appErrors.Name = "appErrors";
+            this.appErrors.Size = new System.Drawing.Size(149, 22);
+            this.appErrors.Text = "Ошибки";
+            this.appErrors.Click += new System.EventHandler(this.appErrors_Click);
+            // 
+            // appFeature
+            // 
+            this.appFeature.Name = "appFeature";
+            this.appFeature.Size = new System.Drawing.Size(149, 22);
+            this.appFeature.Text = "Обновления";
+            this.appFeature.Click += new System.EventHandler(this.appFeature_Click);
+            // 
+            // appInfo
+            // 
+            this.appInfo.Name = "appInfo";
+            this.appInfo.Size = new System.Drawing.Size(149, 22);
+            this.appInfo.Text = "О программе";
+            this.appInfo.Click += new System.EventHandler(this.appInfo_Click);
             // 
             // pictureBox1
             // 
@@ -219,6 +254,10 @@ namespace GraphicEditor
         private System.Windows.Forms.ToolStripMenuItem saveAsPNG;
         private System.Windows.Forms.ToolStripMenuItem saveAsGEF;
         private System.Windows.Forms.SaveFileDialog saveFileDialog1;
+        private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem2;
+        private System.Windows.Forms.ToolStripMenuItem appErrors;
+        private System.Windows.Forms.ToolStripMenuItem appInfo;
+        private System.Windows.Forms.ToolStripMenuItem appFeature;
     }
 }
 
