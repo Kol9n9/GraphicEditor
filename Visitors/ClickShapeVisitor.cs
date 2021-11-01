@@ -9,8 +9,13 @@ namespace GraphicEditor.Visitors
 {
     public class ClickShapeVisitor : IBaseVisitor
     {
-        public int X { get; set; }
-        public int Y { get; set; }
+        private int X;
+        private int Y;
+        public ClickShapeVisitor(int X,int Y)
+        {
+            this.X = X;
+            this.Y = Y;
+        }
         public void Visit(Line line)
         {
             List<Point2D> points = line.GetPoints();

@@ -13,13 +13,6 @@ namespace GraphicEditor.Shapes
         {
             AddPoint(new Point2D());
             AddPoint(new Point2D());
-            AddPoint(new Point2D());
-            AddPoint(new Point2D());
-        }
-        public Rectangle(Point2D start, Point2D end)
-        {
-            AddPoint(start);
-            AddPoint(end);
         }
         public Rectangle(List<Point2D> points)
         {

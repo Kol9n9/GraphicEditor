@@ -17,11 +17,6 @@ namespace GraphicEditor.Shapes
             AddPoint(new Point2D());
             AddPoint(new Point2D());
         }
-        public Line(Point2D start, Point2D end)
-        {
-            AddPoint(start);
-            AddPoint(end);
-        }
         public Line(List<Point2D> points)
         {
             AddPoint(points[0]);

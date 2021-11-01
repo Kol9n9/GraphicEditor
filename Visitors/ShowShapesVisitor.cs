@@ -11,9 +11,10 @@ namespace GraphicEditor.Visitors
 {
     public class ShowShapesVisitor : IBaseVisitor
     {
-        public Graphics graphics { get;  set; }
-        public ShowShapesVisitor()
+        private Graphics graphics; 
+        public ShowShapesVisitor(Graphics graphics)
         {
+            this.graphics = graphics;
         }
         public void Visit(Line line)
         {

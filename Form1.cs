@@ -29,7 +29,7 @@ namespace GraphicEditor
         }
         private void pictureBox1_MouseUp(object sender, MouseEventArgs e)
         {
-            app.LeftMouseUp(e.X, e.Y);
+            app.LeftMouseUp();
         }
         private void pictureBox1_MouseMove(object sender, MouseEventArgs e)
         {

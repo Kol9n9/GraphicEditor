@@ -15,25 +15,22 @@ namespace GraphicEditor
     public class App
     {
         private List<BaseShape> shapes;
-        private ShowShapesVisitor showShapesVisitor;
         private ResizeShapeVisitor resizeShapeVisitor;
         private BaseShape currentShape;
         private ShapeButtonVisitor shapeButtonVisitor;
-        private ClickShapeVisitor clickShapeVisitor;
         private StartMoveShapeVisitor startMoveShapeVisitor;
         private MovingShapeVisitor movingShapeVisitor;
-        private DrawShapeVisitor drawShapeVisitor;
+        private DrawShapeVisitor  drawShapeVisitor;
         private Color currentColor;
         private float lineWidth;
 
         private bool IsDrawing;
-        private bool isStartDrawing;
+        private bool IsStartDrawing;
+
         public App(FlowLayoutPanel shapesContainer, FlowLayoutPanel colorsContainer)
         {
             shapes = new List<BaseShape>();
-            showShapesVisitor = new ShowShapesVisitor();
             resizeShapeVisitor = new ResizeShapeVisitor();
-            clickShapeVisitor = new ClickShapeVisitor();
             shapeButtonVisitor = new ShapeButtonVisitor(shapesContainer);
             startMoveShapeVisitor = new StartMoveShapeVisitor();
             movingShapeVisitor = new MovingShapeVisitor();
@@ -80,11 +77,11 @@ namespace GraphicEditor
             currentShape.ShapeColor = currentColor;
             currentShape.ShapeLineWidth = lineWidth;
             shapes.Add(currentShape);
-            isStartDrawing = false;
+            IsStartDrawing = false;
         }
         private void Draw(int X, int Y)
         {
-            if (isStartDrawing)
+            if (IsStartDrawing)
             {
                 StartDraw(X, Y);
             } 
@@ -110,7 +107,7 @@ namespace GraphicEditor
         public void ProcessDraw(Graphics graphics, int X, int Y)
         {
             graphics.Clear(Color.White);
-            showShapesVisitor.graphics = graphics;
+            var showShapesVisitor = new ShowShapesVisitor(graphics);
 
             if (IsDrawing) Draw(X, Y);
             if (resizeShapeVisitor.IsShapeResized) ResizeShape(X, Y);
@@ -123,8 +120,7 @@ namespace GraphicEditor
         }
         public void ClickShape(int X, int Y)
         {
-            clickShapeVisitor.X = X;
-            clickShapeVisitor.Y = Y;
+            var clickShapeVisitor = new ClickShapeVisitor(X, Y);
             foreach (var shape in shapes)
             {
                 shape.SetSelected(false);
@@ -172,9 +168,9 @@ namespace GraphicEditor
             }
 
             IsDrawing = true;
-            isStartDrawing = true;
+            IsStartDrawing = true;
         }
-        public void LeftMouseUp(int X, int Y)
+        public void LeftMouseUp()
         {
             IsDrawing = false;
             resizeShapeVisitor.IsShapeResized = false;
