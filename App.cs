@@ -22,6 +22,7 @@ namespace GraphicEditor
         private ClickShapeVisitor clickShapeVisitor;
         private StartMoveShapeVisitor startMoveShapeVisitor;
         private MovingShapeVisitor movingShapeVisitor;
+        private DrawShapeVisitor drawShapeVisitor;
         private Color currentColor;
         private float lineWidth;
 
@@ -36,6 +37,7 @@ namespace GraphicEditor
             shapeButtonVisitor = new ShapeButtonVisitor(shapesContainer);
             startMoveShapeVisitor = new StartMoveShapeVisitor();
             movingShapeVisitor = new MovingShapeVisitor();
+            drawShapeVisitor = new DrawShapeVisitor();
             currentColor = Color.Black;
             lineWidth = 1f;
             IsDrawing = false;
@@ -88,7 +90,9 @@ namespace GraphicEditor
             } 
             else
             {
-                currentShape.MoveEndPoint(X, Y);
+                drawShapeVisitor.X = X;
+                drawShapeVisitor.Y = Y;
+                currentShape.Accept(drawShapeVisitor);
             }
         }
         private void ResizeShape(int X, int Y)
