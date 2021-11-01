@@ -9,7 +9,7 @@ using System.Windows.Forms;
 
 namespace GraphicEditor.Visitors
 {
-    public class ShapeButtonVisitor : BaseVisitor
+    public class ShapeButtonVisitor : IBaseVisitor
     {
         private FlowLayoutPanel shapesContainer;
         public Type currentSelectedShape { get; private set; }
@@ -24,11 +24,12 @@ namespace GraphicEditor.Visitors
             button.BackColor = Color.White;
             button.Size = new Size(20, 20);
             Bitmap image = new Bitmap(20,20);
-            
-            for(int i = 5; i < 15; i++)
-            {
-                image.SetPixel(i, i, Color.Black);
-            }
+
+            Pen pen = new Pen(Color.Black);
+
+            Graphics g = Graphics.FromImage(image);
+            g.DrawLine(new Pen(Color.Black), 5, 5, 15, 15);
+
             button.MouseClick += new MouseEventHandler(delegate (object sender, MouseEventArgs e) {
                 currentSelectedShape = typeof(Line);
             });
@@ -42,16 +43,12 @@ namespace GraphicEditor.Visitors
             button.Size = new Size(20, 20);
             Bitmap image = new Bitmap(20, 20);
 
-            for (int i = 0; i < 20; i++)
-            {
-                image.SetPixel(i, 0, Color.Black);
-                image.SetPixel(i, 19, Color.Black);
-            }
-            for (int i = 0; i < 20; i++)
-            {
-                image.SetPixel(0, i, Color.Black);
-                image.SetPixel(19, i, Color.Black);
-            }
+            Pen pen = new Pen(Color.Black);
+
+            Graphics g = Graphics.FromImage(image);
+            g.DrawRectangle(new Pen(Color.Black), 5, 5, 10, 10);
+           
+
             button.MouseClick += new MouseEventHandler(delegate (object sender, MouseEventArgs e) {
                 currentSelectedShape = typeof(GraphicEditor.Shapes.Rectangle);
             });
@@ -65,10 +62,13 @@ namespace GraphicEditor.Visitors
             button.Size = new Size(20, 20);
             Bitmap image = new Bitmap(20, 20);
 
-            for (int i = 5; i < 15; i++)
-            {
-                image.SetPixel(i, i, Color.Black);
-            }
+            Pen pen = new Pen(Color.Black);
+
+            Graphics g = Graphics.FromImage(image);
+            g.DrawLine(new Pen(Color.Black),5,15,15,15);
+            g.DrawLine(new Pen(Color.Black),10,5,15,15);
+            g.DrawLine(new Pen(Color.Black),10,5,5,15);
+            
             button.MouseClick += new MouseEventHandler(delegate (object sender, MouseEventArgs e) {
                 currentSelectedShape = typeof(Triangle);
             });
@@ -82,10 +82,11 @@ namespace GraphicEditor.Visitors
             button.Size = new Size(20, 20);
             Bitmap image = new Bitmap(20, 20);
 
-            for (int i = 5; i < 15; i++)
-            {
-                image.SetPixel(i, i, Color.Red);
-            }
+            Pen pen = new Pen(Color.Black);
+
+            Graphics g = Graphics.FromImage(image);
+            g.DrawEllipse(new Pen(Color.Black), 5, 5, 10, 10);
+
             button.MouseClick += new MouseEventHandler(delegate (object sender, MouseEventArgs e) {
                 currentSelectedShape = typeof(Circle);
             });

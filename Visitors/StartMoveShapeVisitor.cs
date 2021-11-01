@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GraphicEditor.Visitors
 {
-    public class StartMoveShapeVisitor : BaseVisitor
+    public class StartMoveShapeVisitor : IBaseVisitor
     {
         public int X { get; set; }
         public int Y { get; set; }

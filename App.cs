@@ -156,20 +156,17 @@ namespace GraphicEditor
             foreach(var shape in shapes)
             {
                 shape.Accept(resizeShapeVisitor);
-                if (resizeShapeVisitor.IsShapeResized) break;
+                if (resizeShapeVisitor.IsShapeResized) return;
             }
-
-            if (resizeShapeVisitor.IsShapeResized) return;
-
             startMoveShapeVisitor.X = X;
             startMoveShapeVisitor.Y = Y;
 
             foreach(var shape in shapes)
             {
                 shape.Accept(startMoveShapeVisitor);
-                if (startMoveShapeVisitor.IsMovedShape) break;
+                if (startMoveShapeVisitor.IsMovedShape) return;
             }
-            if (startMoveShapeVisitor.IsMovedShape) return;
+
             IsDrawing = true;
             isStartDrawing = true;
         }

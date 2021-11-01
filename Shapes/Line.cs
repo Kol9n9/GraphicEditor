@@ -37,7 +37,7 @@ namespace GraphicEditor.Shapes
             Point2D end = GetPoint(1);
             end.SetCoordinates(X, Y);
         }
-        public override void Accept(BaseVisitor visitor)
+        public override void Accept(IBaseVisitor visitor)
         {
             visitor.Visit(this);
         }

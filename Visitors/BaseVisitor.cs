@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GraphicEditor.Visitors
 {
-    public interface BaseVisitor
+    public interface IBaseVisitor
     { 
         public abstract void Visit(Line line);
         public abstract void Visit(Rectangle rectangle);

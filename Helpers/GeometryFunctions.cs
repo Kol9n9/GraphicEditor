@@ -71,7 +71,9 @@ namespace GraphicEditor.Helpers
         }
         public static double GetCircleRadius(Point2D start, Point2D end)
         {
-            return Math.Sqrt(Math.Pow((end.X - start.X), 2) + Math.Pow((end.Y - start.Y), 2))/2;
+            if (end.Y >= start.Y)
+                return (end.Y - start.Y) / 2;
+            else return (start.Y - end.Y) / 2;
         }
     }
 }

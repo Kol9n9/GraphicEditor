@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 using GraphicEditor.Helpers;
 namespace GraphicEditor.Visitors
 {
-    public class ClickShapeVisitor : BaseVisitor
+    public class ClickShapeVisitor : IBaseVisitor
     {
         public int X { get; set; }
         public int Y { get; set; }

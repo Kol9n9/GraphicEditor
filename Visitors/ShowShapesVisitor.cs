@@ -9,7 +9,7 @@ using System.Threading.Tasks;
 
 namespace GraphicEditor.Visitors
 {
-    public class ShowShapesVisitor : BaseVisitor
+    public class ShowShapesVisitor : IBaseVisitor
     {
         public Graphics graphics { get;  set; }
         public ShowShapesVisitor()
@@ -70,7 +70,24 @@ namespace GraphicEditor.Visitors
             double radius = GeometryFunctions.GetCircleRadius(start, end);
                 
             Pen pen = new Pen(circle.ShapeColor, circle.ShapeLineWidth);
-            graphics.DrawEllipse(pen, start.X, start.Y, (float)radius * 2, (float)radius * 2);
+
+            if(end.X >= start.X && end.Y >= start.Y)
+            {
+                graphics.DrawEllipse(pen, start.X, start.Y, (float)radius * 2, (float)radius * 2);
+            }
+            else if(start.X >= end.X && start.Y >= end.Y)
+            {
+                graphics.DrawEllipse(pen, end.X, end.Y, (float)radius * 2, (float)radius * 2);
+
+            } 
+            else if(end.X >= start.X && start.Y >= end.Y)
+            {
+                graphics.DrawEllipse(pen, start.X, end.Y, (float)radius * 2, (float)radius * 2);
+            }
+            else if (start.X >= end.X && end.Y >= start.Y)
+            {
+                graphics.DrawEllipse(pen, end.X, start.Y, (float)radius * 2, (float)radius * 2);
+            }
 
             if (circle.IsSelected)
             {

@@ -8,7 +8,7 @@ using System.Threading.Tasks;
 
 namespace GraphicEditor.Visitors
 {
-    class SaveShapesVisitor : BaseVisitor
+    class SaveShapesVisitor : IBaseVisitor
     {
         private StreamWriter fileStream;
         public SaveShapesVisitor(StreamWriter FileStream)

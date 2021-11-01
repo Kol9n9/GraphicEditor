@@ -30,7 +30,7 @@ namespace GraphicEditor.Shapes
             throw new Exception("BaseShape.MoveEndPoint Method must be overrided");
         }
 
-        public virtual void Accept(BaseVisitor visitor)
+        public virtual void Accept(IBaseVisitor visitor)
         {
             throw new Exception("BaseShape.Accept Method must be overrided");
         }

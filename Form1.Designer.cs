@@ -31,7 +31,6 @@ namespace GraphicEditor
         {
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.toolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
-            this.openFileWidget = new System.Windows.Forms.ToolStripMenuItem();
             this.saveFileAs = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsJPG = new System.Windows.Forms.ToolStripMenuItem();
             this.saveAsPNG = new System.Windows.Forms.ToolStripMenuItem();
@@ -64,17 +63,11 @@ namespace GraphicEditor
             // toolStripMenuItem1
             // 
             this.toolStripMenuItem1.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.openFileWidget,
             this.saveFileAs});
             this.toolStripMenuItem1.Name = "toolStripMenuItem1";
             this.toolStripMenuItem1.Size = new System.Drawing.Size(48, 20);
             this.toolStripMenuItem1.Text = "Файл";
-            // 
-            // openFileWidget
-            // 
-            this.openFileWidget.Name = "openFileWidget";
-            this.openFileWidget.Size = new System.Drawing.Size(154, 22);
-            this.openFileWidget.Text = "Открыть";
+
             // 
             // saveFileAs
             // 
@@ -212,8 +205,6 @@ namespace GraphicEditor
         #endregion
 
         private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem Файл;
-        private System.Windows.Forms.ToolStripMenuItem openFileWidget;
         private System.Windows.Forms.ToolStripMenuItem toolStripMenuItem3;
         private System.Windows.Forms.PictureBox pictureBox1;
         private System.Windows.Forms.TableLayoutPanel tableLayoutPanel1;

@@ -26,7 +26,7 @@ namespace GraphicEditor.Shapes
             AddPoint(points[0]);
             AddPoint(points[1]);
         }
-        public override void Accept(BaseVisitor visitor)
+        public override void Accept(IBaseVisitor visitor)
         {
             visitor.Visit(this);
         }

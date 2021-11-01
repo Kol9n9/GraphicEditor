@@ -29,6 +29,6 @@ namespace GraphicEditor.Shapes
             return endPoint;
         }
         public abstract override void MoveEndPoint(int X, int Y);
-        public abstract override void Accept(BaseVisitor visitor);
+        public abstract override void Accept(IBaseVisitor visitor);
     }
 }

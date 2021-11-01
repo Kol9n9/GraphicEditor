@@ -7,7 +7,7 @@ using System.Threading.Tasks;
 
 namespace GraphicEditor.Visitors
 {
-    class ResizeShapeVisitor : BaseVisitor
+    class ResizeShapeVisitor : IBaseVisitor
     {
         public int X { get; set; }
         public int Y { get; set; }

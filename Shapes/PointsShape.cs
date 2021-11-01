@@ -77,7 +77,7 @@ namespace GraphicEditor.Shapes
             return points[index];
         }
 
-        public abstract override void Accept(BaseVisitor visitor);
+        public abstract override void Accept(IBaseVisitor visitor);
         /// <summary>
         /// Передвинуть конечную точку
         /// </summary>
